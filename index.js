@@ -23,17 +23,30 @@ const calculateFibonacci = (n) => {
 	return fibonacciSequence;
 };
 
-const showNumbers = (inputArr, delay) => {
-	inputArr.map((item) =>{
-		var number = document.createElement('p');
-		number.innerHTML = item;
-		numberContainer.appendChild(number);
-	})
+const showNumbers = (inputArr) => {
+	inputArr.map(setTimeout((item) =>{
+			var number = document.createElement('p');
+			number.innerHTML = item;
+
+			numberContainer.appendChild(number);
+		}, 3000)
+	);
 
 };
 
+//const showNumber = (item) => {
+//	var number = document.createElement('div');
+//	number.innerHTML = `<p class="box__number">${item}</p>`;
+//	numberContainer.appendChild(number);
+//	console.log(number);
+//}
+
 button.addEventListener('click', (e) => {
+	e.preventDefault();
 	numberContainer.innerHTML = '';
-	let sequence = calculateFibonacci(input.value,5);
-	showNumbers(sequence,5);
+	let sequence = calculateFibonacci(input.value);
+	showNumbers(sequence);
+	//for(let j = 0; j < sequence.length; j++){
+	//	setInterval(showNumber(sequence[j]),3000);
+	//}
 });
