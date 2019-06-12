@@ -6,19 +6,18 @@ const calculateFibonacci = (n) => {
 	let fibonacciSequence = [];
 	console.log(n);
 	console.log(typeof n);
-	if( n === undefined){
-		alert('Please enter a number.');
+	if( n === '' || n < 0 || n > 50){
+		alert('Please enter a positive number between 0 and 50.');
 	}
-	else if(n === 0){
+	else if(n == 0){
 		fibonacciSequence.push(0);
-	}else if(n === 1){
+	}else if(n == 1){
 		fibonacciSequence.push(0,1);
 	}else{
 		fibonacciSequence.push(0,1);
 		for(let i = 2; i <=n; i++){
-			fibonacciSequence.push(fibonacciSequence[i-1] + fibonacciSequence[i-2]);
+			fibonacciSequence.push(fibonacciSequence[i - 1] + fibonacciSequence[i - 2]);
 		}
-		console.log(fibonacciSequence);
 	}
 	return fibonacciSequence;
 };

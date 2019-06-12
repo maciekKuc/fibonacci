@@ -48,13 +48,29 @@
 
  .box__numbers{
  	display: grid;
- 	grid-template-columns: repeat(4, 1fr);
+ 	grid-template-columns: repeat(5, 1fr);
  	justify-items: center;
  }
 
  .box__enter{
  	display: flex;
  	justify-content: center;
+ }
+
+ .box__button{
+ 	font-weight: 500;
+ 	background-color: #ADCB5E;
+ 	border: solid 0.5px #8AB654;
+ 	border-radius: 5px; 
+ 	transition: transform .5s;
+ }
+
+ .box__button:active{
+	transform: translateY(.2rem);
+ }
+
+ .box__input{
+ 	min-width: 190px;
  }
 
  .box__input,
@@ -76,3 +92,43 @@
  		transform: scale(1, 1);
  	}
  }
+
+@media screen and (max-width: 1050px){
+	.title{
+		font-size: 2.5rem;
+	}
+
+	.title--small{
+		font-size: 1.8rem;
+	}
+
+	.box__number{
+ 		font-size: 1.5rem;
+ 	}
+
+ 	.box__numbers{
+ 		grid-template-columns: repeat(4, 1fr);
+ 	}	
+}
+
+@media screen and (max-width: 600px){
+	.title{
+		font-size: 2rem;
+	}
+
+	.title--small{
+		font-size: 1.5rem;
+	}
+
+	.box__enter{
+		flex-direction: column;
+	}
+
+	.box__number{
+ 		font-size: 1.2rem;
+ 	}
+
+ 	.box__numbers{
+ 		grid-template-columns: repeat(2, 1fr);
+ 	}	
+}
